@@ -25,6 +25,28 @@ def sort_ab(a, b):
 
     You may not use sorted() or .sort().
     """
+    c = [0] * (len(a) + len(b))
+        
+    i=y=j=0
+    while i < len(a) and y < len(b):
+        if a[i] <= b[y]:
+            c[j] = a[i]
+            i+= 1
+            j+= 1
+        else:
+            c[j] = b[y]
+            y+= 1
+            j+= 1
+    #one of l is empty
+    while i < len(a):
+        c[j] = a[i]
+        i+= 1
+        j+= 1
+    while y < len(b):
+        c[j] = b[y]
+        y+= 1
+        j+= 1
+    return c    
 
 
 if __name__ == '__main__':
